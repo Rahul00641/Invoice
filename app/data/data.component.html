@@ -1,0 +1,42 @@
+<div *ngIf="dataItems">
+    {{letsCall()}}
+    <table>
+        <tr>
+            <td>Item</td>
+            <td>Total Bill</td>
+        </tr>
+        <tr>
+            <td>
+                {{dataItems.name1}}
+            </td>
+            <td rowspan="2">    
+                {{total}}
+            </td>
+        <tr>
+            <td>
+                {{dataItems.name2}}
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button (click)="showTotal()" class="btn btn-primary">Invoice</button>
+    <br><br>
+    <table *ngIf="created">
+        <tr>
+            <td>Item</td>
+            <td>Price</td>
+        </tr>
+        <tr>
+            <td>{{dataItems.name1}}</td>
+            <td>{{dataItems.p1}}</td>
+        </tr>
+        <tr>
+            <td>{{dataItems.name2}}</td>
+            <td>{{dataItems.p2}}</td>
+        </tr>
+        <tr>
+            <td>Total Bill</td>
+            <td>{{total}}</td>
+        </tr>
+    </table>
+</div>
